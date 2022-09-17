@@ -1,62 +1,70 @@
 import { onNavigate } from '../main.js';
 
 export const login = () => {
-// section main of login padre
+
   const mainLogin = document.createElement('main');
-  mainLogin.setAttribute('class', 'login-main');
-  const sectionLogin = document.createElement('section');
-  sectionLogin.setAttribute('class', 'section_login');
-  // add the buttons of login or register este lo cambio a mi nodo padre?
-  const divloginButtons = document.createElement('div');
-  divloginButtons.setAttribute('class', 'register-buttons-div');
-  const sectionInputs = document.createElement('section');
-  sectionInputs.setAttribute('class', 'section_imputs');
-  const sectionLinesHr = document.createElement('section');
-  sectionLinesHr.setAttribute('class', 'sectionLinesHr');
+  mainLogin.classList.add("login-main")
 
-  const animalPawnet = document.createElement('h2');
-  animalPawnet.setAttribute('class', 'animalPawnet');
-  animalPawnet.textContent = 'Animal Pawnet';
-  const inputEmail = document.createElement('input');
-  inputEmail.setAttribute('class', 'inputs');
-  const email = document.createElement('p');
-  email.textContent = 'Email';
-  const inputPassWord = document.createElement('input');
-  inputPassWord.setAttribute('class', 'inputs');
-  const pasword = document.createElement('p');
-  pasword.textContent = 'Pasword';
+  const sectionLogin = document.createElement('section')
+  sectionLogin.classList.add('section_login')
 
-  const buttonLogin = document.createElement('button');
-  buttonLogin.setAttribute('id', 'log-in');
-  buttonLogin.setAttribute('class', 'login-button');
-  buttonLogin.textContent = 'Inicia sesión';
+  const divloginButtons = document.createElement('div')
+  divloginButtons.classList.add('register-buttons-div')
 
-  const hrLeft = document.createElement('hr');
-  hrLeft.setAttribute('class', 'hrSecLog');
-  const leterSec = document.createElement('p');
-  leterSec.setAttribute('class', 'pLetSec');
+  const sectionInputs = document.createElement('section')
+
+  const sectionLinesHr = document.createElement('section')
+  sectionLinesHr.classList.add('sectionLinesHr')
+
+  const animalPawnet = document.createElement('h2')
+  animalPawnet.classList.add('animalPawnet')
+  animalPawnet.textContent = 'Animal Pawnet'
+
+  const inputEmail = document.createElement('input')
+  inputEmail.classList.add('inputs')
+
+  const email = document.createElement('p')
+  email.textContent = 'Email'
+
+  const inputPassWord = document.createElement('input')
+  inputPassWord.classList.add('inputs')
+
+  const pasword = document.createElement('p')
+  pasword.textContent = 'Pasword'
+
+  const buttonLogin = document.createElement('button')
+  buttonLogin.setAttribute('id', 'log-in')
+  buttonLogin.classList.add('login-button')
+  buttonLogin.textContent = 'Inicia sesión'
+
+  const hrLeft = document.createElement('hr')
+  hrLeft.classList.add('hrSecLog')
+
+  const leterSec = document.createElement('p')
+  leterSec.classList.add('pLetSec')
   leterSec.textContent = 'O'; // no aparece aiudaaa
-  const hrRight = document.createElement('hr');
-  hrRight.setAttribute('class', 'hrSecLog');
 
-  const buttonRegister = document.createElement('button');
-  buttonRegister.textContent = 'Registrate';
-  buttonRegister.setAttribute('id', 'register');
-  buttonRegister.setAttribute('class', 'register-button');
+  const hrRight = document.createElement('hr')
+  hrRight.classList.add('hrSecLog')
 
-  const textRegister = document.createElement('p');
-  textRegister.setAttribute('class', 'textRegister');
-  textRegister.textContent = '¿No tienes cuenta?';
+  const buttonRegister = document.createElement('button')
+  buttonRegister.textContent = 'Registrate'
+  buttonRegister.setAttribute('id', 'register')
+  buttonRegister.classList.add('register-button')
+
+  const textRegister = document.createElement('p')
+  textRegister.classList.add('textRegister')
+  textRegister.textContent = '¿No tienes cuenta?'
 
   buttonRegister.addEventListener('click', () => {
     onNavigate('/register'); // falta el archivo de registro
   });
 
-  // appends the inputs to main
+  
   sectionInputs.append(animalPawnet, inputEmail, email, inputPassWord, pasword);
-  // appends the section lines
+
   sectionLinesHr.append(hrLeft, leterSec, hrRight);
-  // appends the buttons to the main tag
+
   divloginButtons.append(buttonLogin, buttonRegister, textRegister);
 
   sectionLogin.append(sectionInputs, sectionLinesHr, divloginButtons);
